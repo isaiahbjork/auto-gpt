@@ -20,7 +20,7 @@ log-ingestion.txt
 logs
 *.log
 *.mp3
-
+firebase.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -161,3 +161,5 @@ openai/
 
 # news
 CURRENT_BULLETIN.md
+Auto-GPT Crypto.session
+Auto-GPT Crypto.session-journal
