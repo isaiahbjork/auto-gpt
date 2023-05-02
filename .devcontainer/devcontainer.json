@@ -1,8 +1,8 @@
 {
-  "build": {
-    "dockerfile": "./Dockerfile",
-    "context": "."
-  },
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "auto-gpt",
+  "workspaceFolder": "/workspace/Auto-GPT",
+  "shutdownAction": "stopCompose",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": "true",

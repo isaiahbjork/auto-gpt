@@ -20,7 +20,12 @@ log-ingestion.txt
 logs
 *.log
 *.mp3
+<<<<<<< HEAD
 firebase.json
+=======
+mem.sqlite3
+
+>>>>>>> refs/remotes/origin/master
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -94,6 +99,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+site/
 
 # PyBuilder
 target/
