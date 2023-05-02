@@ -218,7 +218,9 @@ def chat_with_ai(
             if counter == 4:
                 current_context.append(create_chat_message("user", 'use command read_file and read advice.txt'))
             if counter == 8:
-                current_context.append(create_chat_message("user", 'use command read_file and read strategy.txt to make sure you are following your strategy.'))
+                current_context.append(create_chat_message("user", 'use command read_file and read strategy.txt and append to it as needed to make sure you are following your strategy.'))
+            if counter == 18:
+                current_context.append(create_chat_message("user", 'use command read_file and read accomplisments.txt and append your success here as needed.'))
             assistant_reply = create_chat_completion(
                 model=model,
                 messages=current_context,
