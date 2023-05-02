@@ -201,7 +201,7 @@ def delete_file(filename: str) -> str:
 
 
 @command("search_files", "Search Files", '"directory": "<directory>"')
-def search_files(directory: str) -> list[str]:
+def search_files(directory: str, **kwargs) -> list[str]:
     """Search for files in a directory
 
     Args:
@@ -210,8 +210,10 @@ def search_files(directory: str) -> list[str]:
     Returns:
         list[str]: A list of files found in the directory
     """
+    if kwargs:
+        raise ValueError("Invalid arguments provided. Please only provide one argument directory")
     found_files = []
-
+    
     for root, _, files in os.walk(directory):
         for file in files:
             if file.startswith("."):

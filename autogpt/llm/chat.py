@@ -215,11 +215,11 @@ def chat_with_ai(
                 current_context.append(create_chat_message("user", 'use command read_file and read instructions.txt'))
             if counter == 2:
                 current_context.append(create_chat_message("user", 'use command read_file and read learnings.txt and append your findings here for memory.'))
-            if counter == 4:
+            if counter == 3:
                 current_context.append(create_chat_message("user", 'use command read_file and read advice.txt'))
-            if counter == 8:
+            if counter == 4:
                 current_context.append(create_chat_message("user", 'use command read_file and read strategy.txt and append to it as needed to make sure you are following your strategy.'))
-            if counter == 18:
+            if counter == 25:
                 current_context.append(create_chat_message("user", 'use command read_file and read accomplisments.txt and append your success here as needed.'))
             assistant_reply = create_chat_completion(
                 model=model,

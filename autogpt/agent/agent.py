@@ -77,7 +77,7 @@ class Agent:
             # Discontinue if continuous limit is reached
             loop_count += 1
             counter += 1
-            if counter >= 20:
+            if counter >= 30:
                 counter = 0
             if (
                 cfg.continuous_mode
