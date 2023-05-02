@@ -139,8 +139,8 @@ def write_to_file(filename: str, text: str) -> str:
     Returns:
         str: A message indicating success or failure
     """
-    if check_duplicate_operation("write", filename):
-        return "Error: File has already been updated."
+    # if check_duplicate_operation("write", filename):
+    #     return "Error: File has already been updated."
     try:
         directory = os.path.dirname(filename)
         os.makedirs(directory, exist_ok=True)

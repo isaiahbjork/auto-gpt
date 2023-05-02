@@ -57,7 +57,7 @@ def generate_context(prompt, relevant_memory, full_message_history, model):
 
 # TODO: Change debug from hardcode to argument
 def chat_with_ai(
-    agent, prompt, user_input, full_message_history, permanent_memory, token_limit
+    agent, prompt, user_input, full_message_history, permanent_memory, token_limit, counter
 ):
     """Interact with the OpenAI API, sending the prompt, user input, message history,
     and permanent memory."""
@@ -211,12 +211,19 @@ def chat_with_ai(
 
             # TODO: use a model defined elsewhere, so that model can contain
             # temperature and other settings we care about
+            if counter == 1:
+                current_context.append(create_chat_message("user", 'use command read_file and read instructions.txt'))
+            if counter == 2:
+                current_context.append(create_chat_message("user", 'use command read_file and read learnings.txt and append your findings here for memory.'))
+            if counter == 4:
+                current_context.append(create_chat_message("user", 'use command read_file and read advice.txt'))
+            if counter == 8:
+                current_context.append(create_chat_message("user", 'use command read_file and read strategy.txt to make sure you are following your strategy.'))
             assistant_reply = create_chat_completion(
                 model=model,
                 messages=current_context,
                 max_tokens=tokens_remaining,
             )
-
             # Update full message history
             full_message_history.append(create_chat_message("user", user_input))
             full_message_history.append(
